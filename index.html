@@ -9,13 +9,13 @@
 
         <input id="place" type="text" onkeyup="myFunction2(document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)" placeholder="Cerca Localitá">     
 	    
-	<select id="tipo" name="menutipo" onchange="myFunction(this.value, 3)">
+	<select id="tipo" name="menutipo" onchange="myFunction2(document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)">
 		<option value="">Seleziona Tipo di Torneo</option>	
 		<option value="Serie Beach 1">Serie Beach 1</option>	
 		<option value="Serie Beach 2">Serie Beach 2</option>	
 		<option value="Serie Beach 3">Serie Beach 3</option>	
 	</select>    	
-	<select id="sesso" name="menusesso" onchange="myFunction(this.value, 2)">	
+	<select id="sesso" name="menusesso" onchange="myFunction2(document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)">	
 		<option value="">Seleziona Sesso</option>	
 		<option value="M">Maschili</option>	
 		<option value="F">Femminili</option>	
