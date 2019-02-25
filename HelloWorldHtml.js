@@ -68,17 +68,20 @@ function myFunction(value, column) {
     }
   }
 
-function myFunction2(value1, value2, value3) {
+function myFunction2(value0, value1, value2, value3) {
     // Declare variables 
-    var input1,input2,input3,bool1,bool2,bool3, filter1, filter2, filter3, table, tr, td, i, txtValue;
+    var input0,input1,input2,input3,bool0,bool1,bool2,bool3,filter0,filter1,filter2,filter3, table, tr, td, i, txtValue;
+    input0 = value0;
     input1 = value1;
     input2 = value2;
     input3 = value3;
     
+    filter0 = input0.toUpperCase();
     filter1 = input1.toUpperCase();
     filter2 = input2.toUpperCase();
     filter3 = input3.toUpperCase();
     
+    bool0 = false;
     bool1 = false;
     bool2 = false;
     bool3 = false;
@@ -89,6 +92,18 @@ function myFunction2(value1, value2, value3) {
     // Loop through all table rows, and hide those who don't match the search query
     
     for (i = 0; i < tr.length; i++) {
+        //data
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter0) > -1)
+        {
+            bool0=true;
+        } else {
+            bool0=false;
+        }
+      }
+        //località
       td = tr[i].getElementsByTagName("td")[1];
       if (td) {
         txtValue = td.textContent || td.innerText;
@@ -99,6 +114,7 @@ function myFunction2(value1, value2, value3) {
             bool1=false;
         }
       }
+        //sesso
       td = tr[i].getElementsByTagName("td")[2];
       if (td) {
         txtValue = td.textContent || td.innerText;
@@ -109,6 +125,7 @@ function myFunction2(value1, value2, value3) {
             bool2=false;
         }
       } 
+        //tipo
       td = tr[i].getElementsByTagName("td")[3];
       if (td) {
         txtValue = td.textContent || td.innerText;
@@ -119,7 +136,7 @@ function myFunction2(value1, value2, value3) {
             bool3=false;
         }
       }
-      if (bool1 && bool2 && bool3)
+      if (bool0 && bool1 && bool2 && bool3)
       {
         tr[i].style.display = "";
       } else {
