@@ -72,7 +72,7 @@ function filter(value0, value1, value2, value3) {
       td = tr[i].getElementsByTagName("td")[0];
       if (td) {
         txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter0) > -1)
+        if (txtValue.toUpperCase().indexOf(filter0) > -1 || txtValue == null)
         {
             bool0=true;
         } else {
