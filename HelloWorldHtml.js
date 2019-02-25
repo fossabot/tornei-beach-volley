@@ -76,7 +76,7 @@ function myFunction2(value0, value1, value2, value3) {
     input2 = value2;
     input3 = value3;
     
-    filter0 = input0.toDateString("yyyy-MM-dd");
+    filter0 = formatDate(input0);
     filter1 = input1.toUpperCase();
     filter2 = input2.toUpperCase();
     filter3 = input3.toUpperCase();
@@ -144,3 +144,15 @@ function myFunction2(value0, value1, value2, value3) {
       }
     }
   }
+
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [day, month, year].join('-');
+}
