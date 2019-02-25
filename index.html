@@ -1,37 +1,51 @@
-<html>
+<!DOCTYPE html>
+<html lang="it">
   <head>
     <title>Filtro Tornei Serie Beach</title>
-    <link rel="stylesheet" href="HelloWorldHtml.css" />
-  
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <!-- Latest compiled and minified CSS -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="tornei-beach-volley.css" />
   </head>
   <body>
-    <div class="filter">
+  	<div class="container-fluid">
+		<h1>Elenco tornei beach volley</h1>
+		<div class="filter row">
+			<div class="col-sm-3">
+				<input id="place" type="text" onkeyup="filter(document.getElementById('datatorneo').value, document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)" placeholder="Cerca Localitá">
+			</div>
+			<div class="col-sm-3">
+				<select id="tipo" name="menutipo" onchange="filter(document.getElementById('datatorneo').value, document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)">
+					<option value="">Seleziona Tipo di Torneo</option>
+					<option value="Serie Beach 1">Serie Beach 1</option>
+					<option value="Serie Beach 2">Serie Beach 2</option>
+					<option value="Serie Beach 3">Serie Beach 3</option>
+				</select>
+			</div>
+			<div class="col-sm-3">
 
-        <input id="place" type="text" onkeyup="myFunction2(document.getElementById('datatorneo').value, document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)" placeholder="Cerca Localitá">     
-	    
-	<select id="tipo" name="menutipo" onchange="myFunction2(document.getElementById('datatorneo').value, document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)">
-		<option value="">Seleziona Tipo di Torneo</option>	
-		<option value="Serie Beach 1">Serie Beach 1</option>	
-		<option value="Serie Beach 2">Serie Beach 2</option>	
-		<option value="Serie Beach 3">Serie Beach 3</option>	
-	</select>    	
-	<select id="sesso" name="menusesso" onchange="myFunction2(document.getElementById('datatorneo').value, document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)">	
-		<option value="">Seleziona Sesso</option>	
-		<option value="M">Maschili</option>	
-		<option value="F">Femminili</option>	
-	</select>
-	    
-	<input type="date" id="datatorneo" name="datatorneo" alt="Giorno Torneo" onchange="myFunction2(document.getElementById('datatorneo').value, document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)">
-	    
-    </div>
-    <div id="overtheblockTable">
-      
-    </div>
-	
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script async src="HelloWorldHtml.js"></script>
+				<select id="sesso" name="menusesso" onchange="filter(document.getElementById('datatorneo').value, document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)">
+					<option value="">Seleziona Sesso</option>
+					<option value="M">Maschili</option>
+					<option value="F">Femminili</option>
+				</select>
+
+			</div>
+			<div class="col-sm-3">
+				<input type="date" id="datatorneo" name="datatorneo" alt="Giorno Torneo" onchange="filter(document.getElementById('datatorneo').value, document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)">
+			</div>
+		</div>
+
+		<div id="overtheblockTable" class="table-responsive">
+
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script async src="tornei-beach-volley.js"></script>
 
   </body>
 </html>
