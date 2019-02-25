@@ -119,7 +119,7 @@ function myFunction2(value1, value2, value3) {
             bool3=false;
         }
       }
-      if (bool1 || bool2 || bool3)
+      if (bool1 && bool2 && bool3)
       {
         tr[i].style.display = "";
       } else {
