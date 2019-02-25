@@ -50,7 +50,7 @@ function myFunction(value, column) {
     // Declare variables 
     var input, filter, table, tr, td, i, txtValue;
     input = value;
-    filter = input.value.toUpperCase();
+    filter = input.toUpperCase();
     table = document.getElementById("table_new");
     tr = table.getElementsByTagName("tr");
   
