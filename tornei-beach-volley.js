@@ -28,7 +28,6 @@ var init = function (){
         //console.log(response);
         var table = $("#table_new", overtheblockSite).html();
         $("#overtheblockTable").html(table);
-        $("#table_new").addClass("table");
       })
       .fail(function () {
 
