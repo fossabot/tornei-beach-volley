@@ -47,7 +47,7 @@ var init = function (){
 
 function filter(value0, value1, value2, value3) {
     //Declare variables
-    var input0 input1, input2, input3, bool0, bool1, bool2, bool3, filter0, filter1, filter2, filter3, table, tr, td, i, txtValue;
+    var input0, input1, input2, input3, bool0, bool1, bool2, bool3, filter0, filter1, filter2, filter3, table, tr, td, i, txtValue;
     input0 = value0;
     input1 = value1;
     input2 = value2;
