@@ -76,7 +76,7 @@ function myFunction2(value0, value1, value2, value3) {
     input2 = value2;
     input3 = value3;
     
-    filter0 = input0.toUpperCase();
+    filter0 = input0.toDateString("yyyy-MM-dd");
     filter1 = input1.toUpperCase();
     filter2 = input2.toUpperCase();
     filter3 = input3.toUpperCase();
