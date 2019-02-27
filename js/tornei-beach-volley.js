@@ -21,8 +21,7 @@ var init = function (){
         "url": urlovertheblock,
         "method": "GET",
         "headers": {
-          "cache-control": "no-cache",
-          "Postman-Token": "4dccec7a-e2e7-4e46-8ab8-878bfc80f121"
+          "cache-control": "no-cache"
         }
       };
 
@@ -33,10 +32,30 @@ var init = function (){
         table = table.split(/serie beach /ig).join('B');
         $("#overtheblockTable").html(table);
       });
+};
+
+function refreshTable ()  {
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://refresh-tornei-beach-volley.herokuapp.com",
+        "method": "GET",
+        "headers": {
+            "cache-control": "no-cache"
+        }
+    };
+
+    $.ajax(settings).done(function (response) {
+        document.location.replace(document.location);
+    });
 }
 
 
 function filter(value0, value1) {
+
+    if(value1  === "admin"){
+        $(".admin").show();
+    }
 
     //Declare variables
     var input0, input1, input2, input3, bool0, bool1, bool2, bool3, filter0, filter1, filter2, filter3, table, tr, td, i, txtValue;
