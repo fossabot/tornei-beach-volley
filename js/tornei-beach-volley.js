@@ -2,7 +2,13 @@
 
 $( document ).ready(function() {
     init();
+
 });
+
+var NS_FILTRI = {
+    filterTipo : "",
+    filterSesso : ""
+};
 
 
 var init = function (){
@@ -30,13 +36,14 @@ var init = function (){
 }
 
 
-function filter(value0, value1, value2, value3) {
+function filter(value0, value1) {
+
     //Declare variables
     var input0, input1, input2, input3, bool0, bool1, bool2, bool3, filter0, filter1, filter2, filter3, table, tr, td, i, txtValue;
     input0 = value0;
     input1 = value1;
-    input2 = value2;
-    input3 = value3;
+    input2 = NS_FILTRI.filterSesso;
+    input3 = NS_FILTRI.filterTipo;
 
     filter0 = formatDate(input0);
     filter1 = input1.toUpperCase();
@@ -50,10 +57,14 @@ function filter(value0, value1, value2, value3) {
 
     table = document.getElementById("table_new");
     tr = table.getElementsByTagName("tr");
-  
+
     // Loop through all table rows, and hide those who don't match the search query
-    
+
     for (i = 0; i < tr.length; i++) {
+        //intestazione italia, serie beach
+        if (i < 3 ){
+            continue;
+        }
         //data
       td = tr[i].getElementsByTagName("td")[0];
       if (td) {
@@ -109,8 +120,8 @@ function filter(value0, value1, value2, value3) {
 
 function formatDate(date) {
     var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
+        month = "" + (d.getMonth() + 1),
+        day = "" + d.getDate(),
         year = d.getFullYear();
 
     if (month.length < 2) month = '0' + month;
