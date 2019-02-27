@@ -7,10 +7,6 @@ $( document ).ready(function() {
 
 var init = function (){
     var overtheblockSite;
-
-    //fuck cors
-    var proxy =  "https://morning-ridge-26980.herokuapp.com/";
-
     var urlovertheblock = "https://crakdelpol.github.io/tornei-beach-volley/tornei.html"
 
     var settings = {
@@ -28,7 +24,7 @@ var init = function (){
         overtheblockSite = $(response);
         //console.log(response);
         var table = $("#table_new", overtheblockSite).parent().html();
-        table.split('Serie Beach ').join('B');
+        table = table.split('Serie Beach ').join('B');
         $("#overtheblockTable").html(table);
       });
 }
