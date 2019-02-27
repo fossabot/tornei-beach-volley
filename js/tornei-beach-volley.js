@@ -46,7 +46,11 @@ function refreshTable ()  {
     };
 
     $.ajax(settings).done(function (response) {
+        alert("Tabella aggiornata");
         document.location.replace(document.location);
+    }).fail(function(error) {
+        console.log(error);
+        alert("Aggiornata");
     });
 }
 
