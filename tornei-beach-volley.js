@@ -10,7 +10,8 @@ var init = function (){
 
     //fuck cors
     var proxy =  "https://morning-ridge-26980.herokuapp.com/";
-    var urlovertheblock = "https://www.overtheblock.it/serie-beach"
+
+    var urlovertheblock = "https://crakdelpol.github.io/tornei-beach-volley/tornei.html"
 
     var settings = {
         "async": true,
