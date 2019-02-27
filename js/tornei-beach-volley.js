@@ -7,7 +7,7 @@ $( document ).ready(function() {
 
 var init = function (){
     var overtheblockSite;
-    var urlovertheblock = "https://crakdelpol.github.io/tornei-beach-volley/tornei.html"
+    var urlovertheblock = "tornei.html"
 
     var settings = {
         "async": true,
