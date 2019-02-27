@@ -28,7 +28,7 @@ var init = function (){
         overtheblockSite = $(response);
         //console.log(response);
         var table = $("#table_new", overtheblockSite).parent().html();
-        table = table.replace("Serie Beach ", "B");
+        table = table.replace(/Serie Beach /g, "B");
         $("#overtheblockTable").html(table);
         
       })
