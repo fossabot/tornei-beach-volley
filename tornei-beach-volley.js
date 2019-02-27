@@ -24,7 +24,7 @@ var init = function (){
         overtheblockSite = $(response);
         //console.log(response);
         var table = $("#table_new", overtheblockSite).parent().html();
-        table = table.split('(?i)\serie beach \b').join('B');
+        table = table.split('/serie beach /gi').join('B');
         $("#overtheblockTable").html(table);
       });
 }
