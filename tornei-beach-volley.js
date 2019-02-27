@@ -27,7 +27,7 @@ var init = function (){
       $.ajax(settings).done(function (response) {
         overtheblockSite = $(response);
         //console.log(response);
-        var table = $("#table_new", overtheblockSite).html();
+        var table = $("#table_new", overtheblockSite).parent().html();
         $("#overtheblockTable").html(table);
       })
       .fail(function () {
