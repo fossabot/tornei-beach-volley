@@ -30,19 +30,6 @@ var init = function (){
         var table = $("#table_new", overtheblockSite).parent().html();
         table = table.replace(/Serie Beach /g, "B");
         $("#overtheblockTable").html(table);
-        
-      })
-      .fail(function () {
-
-        settings.url = proxy+urlovertheblock;
-
-        $.ajax(settings).done(function (response) {
-            overtheblockSite = $(response);
-            //console.log(response);
-            var table = $("#table_new", overtheblockSite).parent().html();
-            $("#overtheblockTable").html(table);
-
-          });
       });
 }
 
