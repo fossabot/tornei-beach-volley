@@ -12,10 +12,10 @@
   	<div class="container-fluid">
 		<h1>Elenco tornei beach volley</h1>
 		<div class="filter row">
-			<div class="col-sm-3">
+			<div class="col-lg-3">
 				<input id="place" type="text" onkeyup="filter(document.getElementById('datatorneo').value, document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)" placeholder="Cerca Localitá">
 			</div>
-			<div class="col-sm-3">
+			<div class="col-lg-3">
 				<select id="tipo" name="menutipo" onchange="filter(document.getElementById('datatorneo').value, document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)">
 					<option value="">Seleziona Tipo di Torneo</option>
 					<option value="Serie Beach 1">Serie Beach 1</option>
@@ -23,7 +23,7 @@
 					<option value="Serie Beach 3">Serie Beach 3</option>
 				</select>
 			</div>
-			<div class="col-sm-3">
+			<div class="col-lg-3">
 
 				<select id="sesso" name="menusesso" onchange="filter(document.getElementById('datatorneo').value, document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)">
 					<option value="">Seleziona Sesso</option>
@@ -32,7 +32,7 @@
 				</select>
 
 			</div>
-			<div class="col-sm-3">
+			<div class="col-lg-3">
 				<label for="datatorneo">Data</label>
 				<input type="date" id="datatorneo" name="datatorneo" alt="Giorno Torneo" onchange="filter(document.getElementById('datatorneo').value, document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)">
 			</div>
