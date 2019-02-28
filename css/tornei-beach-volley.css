@@ -9,7 +9,7 @@ body {
 }
 
 
-@media(max-width:767px){
+@media(max-width:380px){
 
     #table_new tr > *:nth-child(7) {
         display: none;
@@ -22,6 +22,12 @@ body {
     }
 }
 
+@media(max-width:480px){
+
+    #table_new tr > *:nth-child(8) {
+        display: none;
+    }
+}
 
 .dropdown-toggle {
     min-width:160px;
