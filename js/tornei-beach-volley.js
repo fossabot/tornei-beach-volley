@@ -30,7 +30,7 @@ var init = function (){
         //console.log(response);
         var table = $("#table_new", overtheblockSite).parent().html();
         table = table.split(/serie beach /ig).join('B');
-        table = table.split(/Lista d'entrata/ig).join('Entry List');
+        table = table.split(/Lista d'entrata/ig).join('Iscritti');
         table = table.split(/Beach Volley Live/ig).join('Live');
         table = table.split(/Segui in tempo reale/ig).join('Live');
         table = table.split(/INFO/ig).join('Info');
