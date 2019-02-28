@@ -35,6 +35,7 @@ var init = function (){
         table = table.split(/Segui in tempo reale/ig).join('Live');
         table = table.split(/INFO/ig).join('Info');
         table = table.split(/Risultati Main Draw/ig).join('Result');
+        table = table.split(/Classifica/ig).join('Rank');
           
           
         $("#overtheblockTable").html(table);
