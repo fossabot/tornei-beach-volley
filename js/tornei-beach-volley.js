@@ -33,6 +33,7 @@ var init = function (){
         table = table.split(/Lista d'entrata/ig).join('Entry List');
         table = table.split(/Beach Volley Live/ig).join('Live');
         table = table.split(/Segui in tempo reale/ig).join('Live');
+        table = table.split(/INFO/ig).join('Info');
           
         $("#overtheblockTable").html(table);
       });
