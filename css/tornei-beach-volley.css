@@ -1,7 +1,7 @@
 
 body {
 	
-	background-color:red;
+	background-color:white;
 	font-size: 10px;
 }
 
@@ -10,7 +10,7 @@ body {
 }
 
 
-@media(max-width:380px){
+@media(max-width:480px){
 
     #table_new tr > *:nth-child(7) {
         display: none;
@@ -23,7 +23,7 @@ body {
     }
 }
 
-@media(max-width:480px){
+@media(max-width:580px){
 
     #table_new tr > *:nth-child(8) {
         display: none;
