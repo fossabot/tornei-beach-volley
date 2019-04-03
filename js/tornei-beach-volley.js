@@ -15,6 +15,8 @@ var init = function (){
     var overtheblockSite;
     var urlovertheblock = "tornei.html"
 
+    $("#nav-placeholder").load("../nav.html");
+    
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -40,6 +42,7 @@ var init = function (){
           
         $("#overtheblockTable").html(table);
       });
+    
 };
 
 function refreshTable ()  {
