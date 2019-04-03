@@ -5,7 +5,7 @@
  
 <script>
  $(document).ready(function() {
-  $('.bluetext').on('click', function(event) {
+  $("button").on('click', function(event) {
     var url = window.location.href.split("?");
     alert(url[1]);
   });
@@ -13,5 +13,6 @@
 </script>
 
 <body>
+ <button>Click me</button>
 </body>
 </html>
