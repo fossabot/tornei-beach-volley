@@ -15,7 +15,7 @@ var init = function (){
     var overtheblockSite;
     var urlovertheblock = "tornei.html"
 
-    $("#nav-placeholder").load("../nav.html");
+    $("#nav-placeholder").load("/nav.html");
     
     var settings = {
         "async": true,
