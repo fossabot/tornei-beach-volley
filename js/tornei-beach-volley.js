@@ -14,12 +14,7 @@ var NS_FILTRI = {
 var init = function (){
     var overtheblockSite;
     var urlovertheblock = "tornei.html"
-
-<<<<<<< HEAD
     $("#nav-placeholder").load("nav.html");
-=======
-    $("#nav-placeholder").load("/nav.html");
->>>>>>> b2dfacf0f89cc2e1289e23f44c35b5ce884590e2
     
     var settings = {
         "async": true,
