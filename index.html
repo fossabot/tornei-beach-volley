@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>Filtro Tornei Serie Beach</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/default.css" />
+	<link rel="stylesheet" href="css/tornei-beach-volley.css" />
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<div class="container-fluid">
+
+	<h1>Tornei Serie Beach</h1>
+	<div class="row">
+		<div class="col-lg-3">
+			<label for="place">Localita'</label>
+			<input  class="form-control" id="place" type="text" onkeyup="filter(document.getElementById('datatorneo').value, document.getElementById('place').value)" placeholder="Cerca Localitá">
+		</div>
+
+		<div class="col-lg-1 p-3 align-items-center">
+			<label></label>
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Tipo Torneo
+					<span class="caret"></span></button>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+					<li role="presentation"><a onclick="NS_FILTRI.filterTipo='';filter(document.getElementById('datatorneo').value, document.getElementById('place').value)" role="menuitem" tabindex="-1" href="#">Tutti</a></li>
+					<li role="presentation"><a onclick="NS_FILTRI.filterTipo='B1';filter(document.getElementById('datatorneo').value, document.getElementById('place').value)" role="menuitem" tabindex="-1" id="serieB1" href="#">Serie Beach 1</a></li>
+					<li role="presentation"><a onclick="NS_FILTRI.filterTipo='B2';filter(document.getElementById('datatorneo').value, document.getElementById('place').value)" role="menuitem" tabindex="-1" id="serieB2" href="#">Serie Beach 2</a></li>
+					<li role="presentation"><a onclick="NS_FILTRI.filterTipo='B3';filter(document.getElementById('datatorneo').value, document.getElementById('place').value)" role="menuitem" tabindex="-1" id="serieB3" href="#">Serie Beach 3</a></li>
+				</ul>
+			</div>
+
+			<!--select id="tipo" name="menutipo" onchange="filter(document.getElementById('datatorneo').value, document.getElementById('place').value, document.getElementById('sesso').value, document.getElementById('tipo').value)">
+                <option value="">Seleziona Tipo di Torneo</option>
+                <option value="B1">Serie Beach 1</option>
+                <option value="B2">Serie Beach 2</option>
+                <option value="B3">Serie Beach 3</option>
+            </select-->
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<label for="datatorneo">Data</label>
+			<input class="form-control" type="date" id="datatorneo" name="datatorneo" alt="Giorno Torneo" onchange="filter(document.getElementById('datatorneo').value, document.getElementById('place').value)">
+		</div>
+		<div class="col-lg-1 p-3 align-items-center">
+			<label></label>
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle"  type="button" data-toggle="dropdown">Sesso
+					<span class="caret"></span></button>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+					<li role="presentation"><a onclick="NS_FILTRI.filterSesso='';filter(document.getElementById('datatorneo').value, document.getElementById('place').value)" role="menuitem" tabindex="-1" href="#">Tutti</a></li>
+					<li role="presentation"><a onclick="NS_FILTRI.filterSesso='M';filter(document.getElementById('datatorneo').value, document.getElementById('place').value)" role="menuitem" tabindex="-1" href="#">Maschili</a></li>
+					<li role="presentation"><a onclick="NS_FILTRI.filterSesso='F';filter(document.getElementById('datatorneo').value, document.getElementById('place').value)" role="menuitem" tabindex="-1" href="#">Femminili</a></li>
+				</ul>
+			</div>
+			<!--select id="sesso" name="menusesso" onchange="filter(document.getElementById('datatorneo').value, document.getElementById('place').value)">
+                <option value="">Seleziona Sesso</option>
+                <option value="M">Maschili</option>
+                <option value="F">Femminili</option>
+            </select-->
+		</div>
+	</div>
+
+	<div class="row admin">
+		<div class="col-lg-3" >
+			<button type="button" class="btn btn-danger" onclick="refreshTable()">Aggiorna Tabella</button>
+		</div>
+	</div>
+	<div id="overtheblockTable">
+
+	</div>
+
+
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue custom-footer">
+
+	<!-- Copyright -->
+	<div class="footer-copyright text-center py-3">Fonte Dati:
+		<a href="https://www.overtheblock.it/serie-beach"> overtheblock.it</a>
+		(i dati potrebbero non essere aggiornati dalle ultime 48 ore)
+	</div>
+	<!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<script src="js/bootstrap.min.js"></script>
+<script async src="js/tornei-beach-volley.js"></script>
+
+</body>
+</html>
