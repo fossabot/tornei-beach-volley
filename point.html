@@ -7,16 +7,19 @@
 <script>
  $(document).ready(function() {
     var url = window.location.href.split("?");
-    var torneo = url[1].split("=");
-    var n = torneo[1].search("&");
-    alert(n);
-    if (torneo[1].search("&") == -1) {
+    var parametri = url[1].split("&");
+    if (parametri.length > 1)
+    {
+      var torneo = parametri[0].split("=");
+      var montepremi = parametri[1].split("=");
       document.getElementById(torneo[1]).style.display = 'inline';
-    } else {
-     alert(torneo[1]);
+      alert(montepremi[1]);
     }
-  
-    string.search(searchvalue)
+    else
+    {
+      var torneo = url[1].split("=");
+      document.getElementById(torneo[1]).style.display = 'inline';
+    }  
 });
 </script>
 
