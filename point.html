@@ -8,6 +8,7 @@
  $(document).ready(function() {
     var url = window.location.href.split("?");
     var parametri = url[1].split("&");
+    alert(parametri.length);
     if (parametri.length > 1)
     {
       var torneo = parametri[0].split("=");
