@@ -14,10 +14,9 @@
       var montepremi = parametri[1].split("=");
       document.getElementById(torneo[1]).style.display = 'inline';
      
-      $('td').html(function(i, html){
-        html = html + montepremi;
-        return html.replace('%', 'asd'));
-      });
+      var myTable = document.getElementById(torneo);
+      myTable.rows[0].cells[1].innerHTML = 'Hello';
+
     }
     else
     {
