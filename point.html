@@ -15,7 +15,7 @@
       document.getElementById(torneo[1]).style.display = 'inline';
      
       var myTable = document.getElementById(torneo[1]);
-      var rows = document.getElementById(tableId).getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
+      var rows = myTable.getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
      
       var i;
       for (i = 3; i < rows+3; i++) { 
