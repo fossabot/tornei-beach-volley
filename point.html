@@ -18,7 +18,7 @@
      var myTable = document.getElementById(torneo[1]);
      var perc = myTable.rows[3].cells[1].innerHTML.replace("%","");
       alert(perc);
-      myTable.rows[3].cells[1].innerHTML = number(montepremi)*number(perc)/1000;
+      myTable.rows[3].cells[1].innerHTML = Number(montepremi)*Number(perc)/1000;
 
     }
     else
