@@ -15,7 +15,7 @@
       document.getElementById(torneo[1]).style.display = 'inline';
      
       var myTable = document.getElementById(torneo[1]);
-      var rows = rowCount = $('#' + torneo[1] + ' tr').length;
+      var rows = myTable.rows.length;
       alert(rows);
       var i;
       for (i = 3; i < rows+3; i++) { 
