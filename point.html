@@ -1,469 +1,474 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Filtro Tornei Serie Beach</title>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel = "stylesheet" type = "text/css" href = "point.css" />
- <link rel="stylesheet" href="css/bootstrap.min.css">
- <link rel="stylesheet" href="css/default.css">
- 
-<body><center>
-<div id="nav-placeholder"></div>
+    <title>Filtro Tornei Serie Beach</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="point.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/default.css">
+
+<body>
 <div class="container-fluid">
-    <h1>Calcolo Punti</h1>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-3">
+            <select onchange="changeType(this.value)">
+                <option></option>
+                <option value="fci">Finali Campionato Italiano</option>
+                <option value="cpp">Coppa Italia</option>
+                <option value="ci">Campionato Italiano</option>
+                <option value="sb1">Serie Beach 1</option>
+                <option value="sb2">Serie Beach 2</option>
+                <option value="sb3">Serie Beach 3</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-3" id="montepremi">
+            <input class="form-control" id="montepremiValue" onchange="changeMontepremi(this.value)" type="text" placeholder="Montepremi">
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-e" id="tipoQualifica">
+            <select onchange="changeTipoQualifica(this.value)">
+                <option></option>
+                <option value="de">Doppia Eliminazione</option>
+                <option value="pp">Pool Play</option>
+            </select>
+        </div>
+    </div>
 </div>
- 
- 
- 
- 
-<table class="blueTable" id="fci" style="display:none">
-<tbody>
-<thead>
-<tr>
-<th colspan=2>Finale Campionato Italiano</th>
-</tr>
-<tr>
-<th>Posizione</th>
-<th>Punti</th>
-</tr>
-</thead>
-<tr>
-<td>1°</td>
-<td>500</td>
-</tr>
-<tr>
-<td>2°</td>
-<td>425</td>
-</tr>
-<tr>
-<td>3°</td>
-<td>375</td>
-</tr>
-<tr>
-<td>4°</td>
-<td>300</td>
-</tr>
-<tr>
-<td>5°</td>
-<td>250</td>
-</tr>
-<tr>
-<td>7°</td>
-<td>175</td>
-</tr>
-<tr>
-<td>9°</td>
-<td>125</td>
-</tr>
-<tr>
-<td>13°</td>
-<td>100</td>
-</tr>
-<tr>
-<td>17°</td>
-<td>25</td>
-</tr>
-<tr>
-<td>25°</td>
-<td>25</td>
-</tr>
-</tbody>
-</table>
-
-<table class="blueTable" id="cpp" style="display:none">
-<tbody>
-<thead>
-<tr>
-<th colspan=2>Coppa Italia</th>
-</tr>
-<tr>
-<th>Posizione</th>
-<th>Punti</th>
-</tr>
-</thead>
-<tr>
-<td>1°</td>
-<td>450</td>
-</tr>
-<tr>
-<td>2°</td>
-<td>382,5</td>
-</tr>
-<tr>
-<td>3°</td>
-<td>337,5</td>
-</tr>
-<tr>
-<td>4°</td>
-<td>270</td>
-</tr>
-<tr>
-<td>5°</td>
-<td>225</td>
-</tr>
-<tr>
-<td>7°</td>
-<td>157,5</td>
-</tr>
-<tr>
-<td>9°</td>
-<td>112,5</td>
-</tr>
-<tr>
-<td>13°</td>
-<td>90</td>
-</tr>
-<tr>
-<td>17°</td>
-<td>45</td>
-</tr>
-<tr>
-<td>25°</td>
-<td>22,5</td>
-</tr>
-</tbody>
-</table>
-
-<table class="blueTable" id="ci" style="display:none">
-<tbody>
-<thead>
-<tr>
-<th colspan=2>Campionato Italiano</th>
-</tr>
-<tr>
-<th>Posizione</th>
-<th>Punti</th>
-</tr>
-</thead>
-<tr>
-<td>1°</td>
-<td>400</td>
-</tr>
-<tr>
-<td>2°</td>
-<td>340</td>
-</tr>
-<tr>
-<td>3°</td>
-<td>300</td>
-</tr>
-<tr>
-<td>4°</td>
-<td>240</td>
-</tr>
-<tr>
-<td>5°</td>
-<td>200</td>
-</tr>
-<tr>
-<td>7°</td>
-<td>140</td>
-</tr>
-<tr>
-<td>9°</td>
-<td>100</td>
-</tr>
-<tr>
-<td>13°</td>
-<td>80</td>
-</tr>
-<tr>
-<td>17°</td>
-<td>40</td>
-</tr>
-<tr>
-<td>25°</td>
-<td>20</td>
-</tr>
-</tbody>
-</table>
- 
-<table class="blueTable" id="sb1pp" style="display:none">
-<tbody>
-<thead>
-<tr>
-<th colspan=2>Serie Beach 1 Pool Play</th>
-</tr>
-<tr>
-<th>Posizione</th>
-<th>Punti</th>
-</tr>
-</thead>
-<tr>
-<td>1°</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>2°</td>
-<td>90%</td>
-</tr>
-<tr>
-<td>3°</td>
-<td>80%</td>
-</tr>
-<tr>
-<td>4°</td>
-<td>70%</td>
-</tr>
-<tr>
-<td>5°</td>
-<td>50%</td>
-</tr>
-<tr>
-<td>9°</td>
-<td>40%</td>
-</tr>
-<tr>
-<td>2°Pool</td>
-<td>30%</td>
-</tr>
-<tr>
-<td>3°Pool</td>
-<td>20%</td>
-</tr>
-<tr>
-<td>No Qualif.</td>
-<td>10%</td>
-</tr>
-</tbody>
-</table>
-
-<table class="blueTable" id="sb1de" style="display:none">
-<tbody>
-<thead>
-<tr>
-<th colspan=2>Serie Beach 1 Doppia Eliminazione</th>
-</tr>
-<tr>
-<th>Posizione</th>
-<th>Punti</th>
-</tr>
-</thead>
-<tr>
-<td>1°</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>2°</td>
-<td>90%</td>
-</tr>
-<tr>
-<td>3°</td>
-<td>80%</td>
-</tr>
-<tr>
-<td>4°</td>
-<td>70%</td>
-</tr>
-<tr>
-<td>5°</td>
-<td>60%</td>
-</tr>
-<tr>
-<td>7°</td>
-<td>50%</td>
-</tr>
-<tr>
-<td>9°</td>
-<td>40%</td>
-</tr>
-<tr>
-<td>13°</td>
-<td>30%</td>
-</tr>
-<tr>
-<td>17°</td>
-<td>20%</td>
-</tr>
-<tr>
-<td>25°</td>
-<td>10%</td>
-</tr>
-</tbody>
-</table>
- 
-<table class="blueTable" id="sb2pp" style="display:none">
-<tbody>
-<thead>
-<tr>
-<th colspan=2>Serie Beach 2 Pool Play</th>
-</tr>
-<tr>
-<th>Posizione</th>
-<th>Punti</th>
-</tr>
-</thead>
-<tr>
-<td>1°</td>
-<td>35</td>
-</tr>
-<tr>
-<td>2°</td>
-<td>30</td>
-</tr>
-<tr>
-<td>3°</td>
-<td>27</td>
-</tr>
-<tr>
-<td>4°</td>
-<td>24</td>
-</tr>
-<tr>
-<td>5°</td>
-<td>21</td>
-</tr>
-<tr>
-<td>9°</td>
-<td>15</td>
-</tr>
-<tr>
-<td>2°Pool</td>
-<td>12</td>
-</tr>
-<tr>
-<td>3°Pool</td>
-<td>9</td>
-</tr>
-</tbody>
-</table>
- 
-<table class="blueTable" id="sb2de" style="display:none">
-<tbody>
-<thead>
-<tr>
-<th colspan=2>Serie Beach 2 Doppia Eliminazione</th>
-</tr>
-<tr>
-<th>Posizione</th>
-<th>Punti</th>
-</tr>
-</thead>
-<tr>
-<td>1°</td>
-<td>35</td>
-</tr>
-<tr>
-<td>2°</td>
-<td>30</td>
-</tr>
-<tr>
-<td>3°</td>
-<td>27</td>
-</tr>
-<tr>
-<td>4°</td>
-<td>24</td>
-</tr>
-<tr>
-<td>5°</td>
-<td>21</td>
-</tr>
-<tr>
-<td>7°</td>
-<td>18</td>
-</tr>
-<tr>
-<td>9°</td>
-<td>15</td>
-</tr>
-<tr>
-<td>13°</td>
-<td>12</td>
-</tr>
-<tr>
-<td>17°</td>
-<td>9</td>
-</tr>
-<tr>
-<td>25°</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
- 
-<table class="blueTable" id="sb3" style="display:none">
-<tbody>
-<thead>
-<tr>
-<th colspan=2>Serie Beach 3</th>
-</tr>
-<tr>
-<th>Posizione</th>
-<th>Punti</th>
-</tr>
-</thead>
-<tr>
-<td>1°</td>
-<td>12</td>
-</tr>
-<tr>
-<td>2°</td>
-<td>10</td>
-</tr>
-<tr>
-<td>3°</td>
-<td>9</td>
-</tr>
-<tr>
-<td>4°</td>
-<td>7</td>
-</tr>
-<tr>
-<td>5°</td>
-<td>5</td>
-</tr>
-<tr>
-<td>7°</td>
-<td>4</td>
-</tr>
-<tr>
-<td>9°</td>
-<td>3</td>
-</tr>
-<tr>
-<td>13°</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
- 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<!-- Latest compiled and minified CSS -->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/point.js"></script>
-
- <script>
- $(document).ready(function() {
-    var url = window.location.href.split("?");
-    var parametri = url[1].split("&");
-    if (parametri.length > 1)
-    {
-      var torneo = parametri[0].split("=");
-      var montepremi = parametri[1].split("=");
-      document.getElementById(torneo[1]).style.display = 'inline-table';
-     
-      var myTable = document.getElementById(torneo[1]);
-      var rows = myTable.rows.length;
-      var i;
-      for (i = 2; i < rows; i++) { 
-        var perc = myTable.rows[i].cells[1].innerHTML.replace("%","");
-        var punti = montepremi[1] * perc / 1000;
-        myTable.rows[i].cells[1].innerHTML = punti;
-      }
-
-    }
-    else
-    {
-      var torneo = url[1].split("=");
-      document.getElementById(torneo[1]).style.display = 'inline';
-    }
-});
-</script>
+<div style="text-align: center;">
+    <div id="nav-placeholder"></div>
+    <div class="container-fluid">
+        <h1>Calcolo Punti</h1>
+    </div>
 
 
-</center>
+    <table class="blueTable" id="fci" style="display:none">
+        <tbody>
+        <thead>
+        <tr>
+            <th colspan=2>Finale Campionato Italiano</th>
+        </tr>
+        <tr>
+            <th>Posizione</th>
+            <th>Punti</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1°</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>2°</td>
+            <td>425</td>
+        </tr>
+        <tr>
+            <td>3°</td>
+            <td>375</td>
+        </tr>
+        <tr>
+            <td>4°</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>5°</td>
+            <td>250</td>
+        </tr>
+        <tr>
+            <td>7°</td>
+            <td>175</td>
+        </tr>
+        <tr>
+            <td>9°</td>
+            <td>125</td>
+        </tr>
+        <tr>
+            <td>13°</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>17°</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>25°</td>
+            <td>25</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="blueTable" id="cpp" style="display:none">
+        <tbody>
+        <thead>
+        <tr>
+            <th colspan=2>Coppa Italia</th>
+        </tr>
+        <tr>
+            <th>Posizione</th>
+            <th>Punti</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1°</td>
+            <td>450</td>
+        </tr>
+        <tr>
+            <td>2°</td>
+            <td>382,5</td>
+        </tr>
+        <tr>
+            <td>3°</td>
+            <td>337,5</td>
+        </tr>
+        <tr>
+            <td>4°</td>
+            <td>270</td>
+        </tr>
+        <tr>
+            <td>5°</td>
+            <td>225</td>
+        </tr>
+        <tr>
+            <td>7°</td>
+            <td>157,5</td>
+        </tr>
+        <tr>
+            <td>9°</td>
+            <td>112,5</td>
+        </tr>
+        <tr>
+            <td>13°</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>17°</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <td>25°</td>
+            <td>22,5</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="blueTable" id="ci" style="display:none">
+        <tbody>
+        <thead>
+        <tr>
+            <th colspan=2>Campionato Italiano</th>
+        </tr>
+        <tr>
+            <th>Posizione</th>
+            <th>Punti</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1°</td>
+            <td>400</td>
+        </tr>
+        <tr>
+            <td>2°</td>
+            <td>340</td>
+        </tr>
+        <tr>
+            <td>3°</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>4°</td>
+            <td>240</td>
+        </tr>
+        <tr>
+            <td>5°</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>7°</td>
+            <td>140</td>
+        </tr>
+        <tr>
+            <td>9°</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>13°</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>17°</td>
+            <td>40</td>
+        </tr>
+        <tr>
+            <td>25°</td>
+            <td>20</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="blueTable" id="sb1pp" style="display:none">
+        <tbody>
+        <thead>
+        <tr>
+            <th colspan=2>Serie Beach 1 Pool Play</th>
+        </tr>
+        <tr>
+            <th>Posizione</th>
+            <th>Punti</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1°</td>
+            <td>100%</td>
+        </tr>
+        <tr>
+            <td>2°</td>
+            <td>90%</td>
+        </tr>
+        <tr>
+            <td>3°</td>
+            <td>80%</td>
+        </tr>
+        <tr>
+            <td>4°</td>
+            <td>70%</td>
+        </tr>
+        <tr>
+            <td>5°</td>
+            <td>50%</td>
+        </tr>
+        <tr>
+            <td>9°</td>
+            <td>40%</td>
+        </tr>
+        <tr>
+            <td>2°Pool</td>
+            <td>30%</td>
+        </tr>
+        <tr>
+            <td>3°Pool</td>
+            <td>20%</td>
+        </tr>
+        <tr>
+            <td>No Qualif.</td>
+            <td>10%</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="blueTable" id="sb1de" style="display:none">
+        <tbody>
+        <thead>
+        <tr>
+            <th colspan=2>Serie Beach 1 Doppia Eliminazione</th>
+        </tr>
+        <tr>
+            <th>Posizione</th>
+            <th>Punti</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1°</td>
+            <td>100%</td>
+        </tr>
+        <tr>
+            <td>2°</td>
+            <td>90%</td>
+        </tr>
+        <tr>
+            <td>3°</td>
+            <td>80%</td>
+        </tr>
+        <tr>
+            <td>4°</td>
+            <td>70%</td>
+        </tr>
+        <tr>
+            <td>5°</td>
+            <td>60%</td>
+        </tr>
+        <tr>
+            <td>7°</td>
+            <td>50%</td>
+        </tr>
+        <tr>
+            <td>9°</td>
+            <td>40%</td>
+        </tr>
+        <tr>
+            <td>13°</td>
+            <td>30%</td>
+        </tr>
+        <tr>
+            <td>17°</td>
+            <td>20%</td>
+        </tr>
+        <tr>
+            <td>25°</td>
+            <td>10%</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="blueTable" id="sb2pp" style="display:none">
+        <tbody>
+        <thead>
+        <tr>
+            <th colspan=2>Serie Beach 2 Pool Play</th>
+        </tr>
+        <tr>
+            <th>Posizione</th>
+            <th>Punti</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1°</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>2°</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>3°</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>4°</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>5°</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>9°</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>2°Pool</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>3°Pool</td>
+            <td>9</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="blueTable" id="sb2de" style="display:none">
+        <tbody>
+        <thead>
+        <tr>
+            <th colspan=2>Serie Beach 2 Doppia Eliminazione</th>
+        </tr>
+        <tr>
+            <th>Posizione</th>
+            <th>Punti</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1°</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>2°</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>3°</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>4°</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>5°</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>7°</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>9°</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>13°</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>17°</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>25°</td>
+            <td>2</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="blueTable" id="sb3" style="display:none">
+        <tbody>
+        <thead>
+        <tr>
+            <th colspan=2>Serie Beach 3</th>
+        </tr>
+        <tr>
+            <th>Posizione</th>
+            <th>Punti</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1°</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>2°</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>3°</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>4°</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>5°</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>7°</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>9°</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>13°</td>
+            <td>2</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <script src="js/lib/popper.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/point.js"></script>
+
+    <script>
+
+    </script>
+
+
+</div>
 </body>
 </html>
