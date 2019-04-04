@@ -8,6 +8,9 @@
  $(document).ready(function() {
     var url = window.location.href.split("?");
     var torneo = url[1].split("=");
+    alert(torneo[1]);
+    var n = torneo[1].search("&");
+    alert(n);
     if (torneo[1].search("&") == -1)
       document.getElementById(torneo[1]).style.display = 'inline';
     else {
