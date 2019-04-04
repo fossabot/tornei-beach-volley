@@ -14,8 +14,8 @@
       var montepremi = parametri[1].split("=");
       document.getElementById(torneo[1]).style.display = 'inline';
      
-      $('td').each(function () {
-        $(this).html($(this).html().replace('%', 'asd'));
+      $('td').html(function(i, html){
+        return html.replace('%', 'asd'));
       });
     }
     else
