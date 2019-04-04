@@ -18,7 +18,7 @@
       var rows = myTable.rows.length;
       alert(rows);
       var i;
-      for (i = 3; i < rows+3; i++) { 
+      for (i = 2; i < rows; i++) { 
         var perc = myTable.rows[i].cells[1].innerHTML.replace("%","");
         var punti = montepremi[1] * perc / 1000;
         myTable.rows[i].cells[1].innerHTML = punti;
