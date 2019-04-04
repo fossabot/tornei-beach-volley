@@ -9,7 +9,13 @@
     var url = window.location.href.split("?");
     alert(url[1]);
     var torneo = url[1].split("=");
-    document.getElementById(torneo[1]).style.display = 'inline';
+    if (torneo[1].search("?")==-1)
+      document.getElementById(torneo[1]).style.display = 'inline';
+    else {
+     alert(torneo[1]);
+    }
+  
+    string.search(searchvalue)
 });
 </script>
 
