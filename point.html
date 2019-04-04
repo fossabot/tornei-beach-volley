@@ -11,15 +11,15 @@
     if (parametri.length > 1)
     {
       var torneo = parametri[0].split("=");
-      var montepremi = Number(parametri[1].split("="));
+      var montepremi = parametri[1].split("=");
       document.getElementById(torneo[1]).style.display = 'inline';
      
       
       var myTable = document.getElementById(torneo[1]);
       var perc = Number(myTable.rows[3].cells[1].innerHTML.replace("%",""));
-      alert(montepremi);
+      alert(montepremi[1]);
       alert(perc);
-      var punti = montepremi * perc / 1000;
+      var punti = montepremi[1] * perc / 1000;
       alert(punti);
       myTable.rows[3].cells[1].innerHTML = punti;
 
