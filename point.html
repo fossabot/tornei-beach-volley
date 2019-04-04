@@ -8,6 +8,8 @@
  $(document).ready(function() {
     var url = window.location.href.split("?");
     alert(url[1]);
+    var torneo = url[1].split("=");
+    document.getElementById(torneo[1]).style.display = 'inline';
 });
 </script>
 
