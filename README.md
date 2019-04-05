@@ -1,4 +1,4 @@
-
+ [![License](https://img.shields.io/npm/l/@angular/cli.svg)](https://github.com/crakdelpol/tornei-beach-volley/blob/master/LICENSE)
 
 # TorneiBeachVolley
 
