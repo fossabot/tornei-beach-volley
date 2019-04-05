@@ -1,4 +1,4 @@
- [![License](https://img.shields.io/npm/l/@angular/cli.svg)](https://github.com/crakdelpol/tornei-beach-volley/blob/master/LICENSE) [![DeepScan grade](https://deepscan.io/api/teams/3289/projects/4845/branches/38536/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=3289&pid=4845&bid=38536)
+ [![License](https://img.shields.io/npm/l/@angular/cli.svg)](https://github.com/crakdelpol/tornei-beach-volley/blob/master/LICENSE) [![DeepScan grade](https://deepscan.io/api/teams/3289/projects/4845/branches/38536/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=3289&pid=4845&bid=38536) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2690/badge)](https://bestpractices.coreinfrastructure.org/projects/2690)
 
 # TorneiBeachVolley
 
